@@ -1,0 +1,23 @@
+Aduranensisflower_S2_L001_R1_001.fastq.gz
+Aduranensisflower_S2_L001_R2_001.fastq.gz
+Aduranensisleaf_S1_L001_R1_001.fastq.gz
+Aduranensisleaf_S1_L001_R2_001.fastq.gz
+Aduranensispeg_S3_L001_R1_001.fastq.gz
+Aduranensispeg_S3_L001_R2_001.fastq.gz
+Aduranensisroot_S4_L001_R1_001.fastq.gz
+Aduranensisroot_S4_L001_R2_001.fastq.gz
+Aduranensisstem_S5_L001_R1_001.fastq.gz
+Aduranensisstem_S5_L001_R2_001.fastq.gz
+V14167-peg_R1.fastq.gz
+V14167-peg_R2.fastq.gz
+V14167-peg_S9_L001_R1_001.fastq.gz
+V14167-root_R1.fastq.gz
+V14167-root_R2.fastq.gz
+V14167-root_S10_L001_R1_001.fastq.gz
+V14167-stem_R1.fastq.gz
+V14167-stem_R2.fastq.gz
+
+---- These deposited in the NCBI ----
+durV14167_rep1_CGATGT_L002_R1_001.fastq.gz
+durV14167_rep2_CCGTCC_L003_R1_001.fastq.gz
+durV14167_rep3_CAGATC_L004_R1_001.fastq.gz
