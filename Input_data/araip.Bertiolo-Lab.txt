@@ -9,7 +9,7 @@ Ai-root_S4_L001_R2_001.fastq.gz
 Ai-stem_S5_L001_R1_001.fastq.gz
 Ai-stem_S5_L001_R2_001.fastq.gz
 
-#### These libraries below are deposited in the NCBI
+---- These libraries below are deposited in the NCBI
 ipa_rep1_TGACCA_L002_R1_001.fastq.gz
 ipa_rep2_GTCCGC_L003_R1_001.fastq.gz
 ipa_rep3_CTTGTA_L004_R1_001.fastq.gz
