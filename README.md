@@ -10,9 +10,9 @@ Step 3: Ensure fasta header names in reference genome do not have the following 
 * A colon 
 * An underscore
 
-Step 4: If EST data is available: prepare ESTs data and align to reference genome
+[Step 4: If EST data is available: prepare ESTs data and align to reference genome](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/prepare_ESTs)
 
-
+Step 5: If PacBio data is available: prepare PacBio data and align to reference genome
 
 
 Step #: Align reads to a reference genome & generate a BAM file 
