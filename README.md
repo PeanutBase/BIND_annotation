@@ -3,8 +3,9 @@ Scripts, notes and documents about the BIND annotation workflow (BIND: ab initio
 
 [Step 1: Download data from SRA](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/download_data)
 
-Step 2: Trim reads and concatenate reads together
-* Example: species.PE1.combined.fq & species.PE2.combined.fq
+[Step 2: Run fastqc, trim reads and concatenate reads together](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/trim_data)
+
+
 
 Step 3: Ensure fasta header names do not have the following items:
 * Training white space
