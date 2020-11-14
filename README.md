@@ -10,12 +10,8 @@ Step 3: Ensure fasta header names in reference genome do not have the following 
 * A colon 
 * An underscore
 
-[Step 4: If EST data is available: prepare ESTs data and align to reference genome](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/prepare_ESTs)
 
-[Step 5: If PacBio data is available: prepare PacBio data and align to reference genome](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/prepare_PacBio)
-
-
-Step #: Align reads to a reference genome & generate a BAM file 
+[Step 4: Align reads to a reference genome & generate a BAM file](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/generate_bam)
 * Examples of alignment programs
   * STAR
   * HiStat2
@@ -23,3 +19,12 @@ Step #: Align reads to a reference genome & generate a BAM file
 * If using both Paired-end and Single end reads: merge PE and SE BAM files and sort combined BAM files
 * If combined BAM file is larger than 100 GB it is recommened to split the BAM file by chromsome 
   * A large BAM file could take weeks to finish 
+
+
+
+
+[Step #: If EST data is available: prepare ESTs data and align to reference genome](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/prepare_ESTs)
+
+[Step #: If PacBio data is available: prepare PacBio data and align to reference genome](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/prepare_PacBio)
+
+
