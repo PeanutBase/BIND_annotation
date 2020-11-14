@@ -20,6 +20,6 @@ Step #: Align reads to a reference genome & generate a BAM file
   * STAR
   * HiStat2
   * TopHat2
-* If using both Paired-end and Single end reads: merge and sort BAM files
+* If using both Paired-end and Single end reads: merge PE and SE BAM files and sort combined BAM files
 * If combined BAM file is larger than 100 GB it is recommened to split the BAM file by chromsome 
   * A large BAM file could take weeks to finish 
