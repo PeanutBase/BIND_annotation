@@ -10,7 +10,6 @@ Step 3: Ensure fasta header names in reference genome do not have the following 
 * A colon 
 * An underscore
 
-
 [Step 4: Align reads to a reference genome & generate a BAM file](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/generate_bam)
 * Examples of alignment programs
   * STAR
@@ -20,7 +19,13 @@ Step 3: Ensure fasta header names in reference genome do not have the following 
 * If combined BAM file is larger than 100 GB it is recommened to split the BAM file by chromsome 
   * A large BAM file could take weeks to finish 
 
-
+Step 5: Use BAM file for input for multiple genome guided transcriptome assembliers, get GFF3/GTF files as output
+* Examples of genome guided transcriptome assembly programs
+  * Cufflinks
+  * Class2
+  * Strawberry
+  * StringTie
+  * Trinity
 
 
 [Step #: If EST data is available: prepare ESTs data and align to reference genome](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/prepare_ESTs)
