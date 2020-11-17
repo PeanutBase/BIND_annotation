@@ -19,7 +19,7 @@ Step 3: Ensure fasta header names in reference genome do not have the following 
 * If combined BAM file is larger than 100 GB it is recommened to split the BAM file by chromsome 
   * A large BAM file could take weeks to finish 
 
-Step 5: Use BAM file for input for multiple genome guided transcriptome assembliers, get GFF3/GTF files as output
+[Step 5: Use BAM file for input for multiple genome guided transcriptome assembliers, get GFF3/GTF files as output](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/generate_GFF)
 * Examples of genome guided transcriptome assembly programs
   * Cufflinks
   * Class2
