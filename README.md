@@ -33,5 +33,7 @@ Step 3: Ensure fasta header names in reference genome do not have the following 
 
 [Step 7: If PacBio data is available: prepare PacBio data and align to reference genome](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/prepare_PacBio)
 
-Step 8: Mikado pipeline
+Step 8: Run Portculli for splice junctions analysis
+
+Step 9: Mikado pipeline
 
