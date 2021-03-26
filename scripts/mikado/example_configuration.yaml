@@ -1,0 +1,97 @@
+# Configuration file for Mikado. Please note that absent values, e.g. if a
+# field is deleted, will be imputed by the default values for the program.
+# Sections:
+# - log_settings: settings related to the verbosity of logs.
+# - db_settings: Database settings, for Mikado serialise and pick.
+# - reference: Settings related to the genome reference.
+# - prepare: settings related to the Mikado prepare stage
+# - serialise: settings related to the Mikado serialise stage
+# - pick: settings related to the Mikado pick stage
+# - multiprocessing_method: which method (fork, spawn, forkserver) Mikado
+# should use for multiprocessing.
+db_settings:
+  # Settings related to DB connection. Parameters:
+  # db: the DB to connect to. Required. Default: mikado.db
+  # dbtype: Type of DB to use. Choices: sqlite, postgresql, mysql. Default:
+  # sqlite.
+  db: /work/LAS/mash-lab/jing/arabidopsis/pool/mikado.db
+  dbtype: sqlite
+log_settings:
+  # Settings related to the logs. Keys:
+  # - log_level: verbosity. Default: INFO. In decreasing order: DEBUG, INFO,
+  # WARNING, ERROR, CRITICAL
+  {}
+pick:
+  # Parameters related to the Mikado pick stage.
+  # - alternative_splicing: Parameters related to which AS events to consider
+  # as valid during picking.
+  # - chimera_split: parameters related to splitting of transcripts in the
+  # presence of multiple ORFs
+  # - files: input and output files
+  # - run_options: generic options related to the run, eg number of processors
+  # to use.
+  # - scoring_file: a scoring file for the analysis. Default: plant.yaml.
+  alternative_splicing:
+    # Parameters related to alternative splicing reporting.
+    # - report: whether to report at all or not the AS events.
+    # - only_confirmed_introns: bring back AS events only when their introns
+    # are either
+    #  present in the primary transcript or in the set of confirmed introns.
+    # - pad: boolean switch. If false, Mikado will pad all the transcript in a
+    # gene so that their ends are the same
+    only_confirmed_introns: true
+    pad: true
+    report: true
+  chimera_split:
+    # Parameters related to the splitting of transcripts in the presence of
+    # two or more ORFs. Parameters:
+    # - execute: whether to split multi-ORF transcripts at all. Boolean.
+    # - blast_check: whether to use BLAST information to take a decision. See
+    # blast_params for details.
+    # - blast_params: Parameters related to which BLAST data we want to
+    # analyse.
+    blast_check: true
+    blast_params:
+      # Parameters for the BLAST check prior to splitting.
+      # - evalue: Minimum evalue for the whole hit. Default: 1e-6
+      # - leniency: One of STRINGENT, LENIENT, PERMISSIVE. Default: STRINGENT
+      # - max_target_seqs: maximum number of hits to consider. Default: 3
+      {}
+    execute: false
+  clustering:
+    # Parameters related to the clustering of transcripts into loci.
+    # - flank: maximum distance for transcripts to be clustered within the
+    # same superlocus.
+    {}
+  files:
+    # Input and output files for Mikado pick.
+    # - gff: input GTF/GFF3 file. Default: mikado_prepared.gtf
+    # - loci_out: output GFF3 file from Mikado pick. Default: mikado.loci.gff3
+    # - subloci_out: optional GFF file with the intermediate subloci. Default:
+    # no output
+    # - monoloci_out: optional GFF file with the intermediate monoloci.
+    # Default: no output
+    # - log: log file for this step.
+    input: mikado_prepared.gtf
+    monoloci_out: ''
+    subloci_out: ''
+  output_format:   ##### Add this line - indent the same as 'fragments:' below
+    report_all_orfs: true  ##### Add this line - indent the same as 'subloci_out:' above
+  fragments:
+    # Parameters related to the handling of fragments.
+    # - remove: boolean. Whether to remove fragments or leave them, properly
+    # tagged.
+    {}
+  run_options:
+    # Generic run options.
+    # - intron_range: A range where most of the introns (99%) should fall
+    # into. Transcripts with too many
+    #  introns larger or smaller than what is defined in this range will be
+    # penalised
+    #  in the scoring. Default: [60, 900]
+    # - shm: boolean flag. If set and the DB is sqlite, it will be copied onto
+    # the /dev/shm faux partition
+    # - single_thread: boolean flag. If set, multithreading will be disabled
+    # useful for profiling and debugging.
+    single_thread: false
+  scoring_file: plants.yaml
