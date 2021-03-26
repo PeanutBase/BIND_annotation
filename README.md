@@ -9,6 +9,7 @@ Scripts, notes and documents about the BIND annotation workflow (BIND: ab initio
 
 Step 3: Ensure fasta header names in reference genome do not have the following items:
 * Training white space
+* White space between numbers or letters
 * A colon 
 * An underscore
 
@@ -27,13 +28,11 @@ Step 3: Ensure fasta header names in reference genome do not have the following 
   * Class2
   * Strawberry
   * StringTie
-  * Trinity
+  * Note: Not recommonded to use Trinity because it generartes to many small incomplete transcripts 
 
-[Step 6: If EST data is available: prepare ESTs data and align to reference genome](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/prepare_ESTs)
+Step 6: Run Portculli for splice junctions analysis
 
-[Step 7: If PacBio data is available: prepare PacBio data and align to reference genome](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/prepare_PacBio)
+[Step 7: Mikado pipeline] (https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/mikado)
 
-Step 8: Run Portculli for splice junctions analysis
-
-Step 9: Mikado pipeline
+[Step 8: Quality control of Mikado pipeline output] (https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/DI_quality_control)
 
