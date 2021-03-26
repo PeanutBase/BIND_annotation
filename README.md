@@ -32,7 +32,7 @@ Step 3: Ensure fasta header names in reference genome do not have the following 
 
 Step 6: Run Portculli for splice junctions analysis
 
-[Step 7: Mikado pipeline] (https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/mikado)
+[Step 7: Mikado pipeline](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/mikado)
 
-[Step 8: Quality control of Mikado pipeline output] (https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/DI_quality_control)
+[Step 8: Quality control of Mikado pipeline output](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/DI_quality_control)
 
