@@ -30,7 +30,7 @@ Step 3: Ensure fasta header names in reference genome do not have the following 
   * StringTie
   * Note: Not recommonded to use Trinity because it generartes to many small incomplete transcripts 
 
-Step 6: Run Portculli for splice junctions analysis
+[Step 6: Run Portculli for splice junctions analysis](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/portcullis.sh)
 
 [Step 7: Mikado pipeline](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/mikado)
 
