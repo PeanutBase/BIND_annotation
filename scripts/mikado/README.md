@@ -6,6 +6,21 @@ ml singularity
 singularity pull --name mikado.sif shub://aseetharam/mikado
 ```
 
+Consolidate all the transcripts, and predict potential protein coding sequence by Mikado:
+##### Step 1: Make a configure file and prepare transcripts
+
+###### Step 1.1 Prepare a tab-delimited file called list.txt (shown below) to include gtf path (1st column), gtf abbrev (2nd column), stranded-specific or not (3rd column):
+```
+/path/to/file/genome_class.gtf	araip_class	False
+/path/to/file/genome_transcripts.gtf	araip_cufflinks	False
+/path/to/file/genome_stringtie.gtf	araip_stringtie	False
+/path/to/file/genome_strawberry.gtf	araip_strawberry	False
+```
+###### Step 1.2 Move or generate a symoblic link to the portcullis_all.junctions.bed file and the genome file 
+
+
+
+
 
 
 After completion of Mikado step 4 it is important to filter the results to remove TEs and verify abundance of transcripts. 
