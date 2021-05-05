@@ -5,7 +5,7 @@ ml cufflinks
 gffread <prefix>.loci.gff3 -g <genome.fasta> -x <prefix.CDS.fasta>
 ```
   
-**Run [TEsorter])https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/TEsorter.sh) to determine which CDS are TEs**
+**Run [TEsorter](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/TEsorter.sh) to determine which CDS are TEs**
 ```
 ./TEsorter.sh <prefix.CDS.fasta>
 ```
@@ -30,11 +30,25 @@ seqtk subseq <prefix.CDS.fasta> <prefix>.CDS.TE_FILTERED.list > <prefix>.CDS.TE_
 
 ```
 
-**Run kallisto 
-
-Use <prefix>.CDS.TE_FILTERED.fasta for input for kallisto
+**Run [kallisto](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/kallisto.sh) to determine the quantifying abundances to support CDS sequences** 
 ```
- ./TEsorter.sh <prefix>.CDS.TE_FILTERED.fasta
+./kallisto.sh <prefix>.CDS.TE_FILTERED.fasta INDEX Read_PE1.fq Read_PE2.fq
 ```
 
-* Filter kallisto results
+**Filter kallisto results**
+
+```
+awk -v OFS="\t" '{if (NR!=1 && $5 > 0) print $1}' abundance.tsv > <prefix>.TMP0.list  
+      ##Filters CDS sequence with greater than 0 TMP associated with the CDS sequnce. Increase the TMP filter value to get a more stringent filter value
+
+ml seqtk
+
+seqtk subseq <prefix>.CDS.TE_FILTERED.fasta <prefix>.TMP0.list  > <prefix>.TMP0.Final.fasta
+```
+**Create a new filter gff3 file**
+```
+grep '^>' <prefix>.TMP0.Final.fasta | awk -v OFS="\t" '{print $1,$2 }' | sed 's/gene=//; s/^>//' > list
+singularity exec --bind $PWD mikado.sif mikado util grep list <prefix>.loci.gff3 > <prefix>.TMP0.Final.gff3
+    ### important the mikado.sif signiularity images needs to in the same location you are working in.
+
+```
