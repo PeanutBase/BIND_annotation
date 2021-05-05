@@ -39,6 +39,7 @@ Run [step2.sh](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/m
 **Step 3: Predict potential CDS from transcripts**
 There are multiple ways to conduct this step. The output needed from this step is an ORF.bed file. 
 Scripts available to use for this step: 
+
 [Transdecoder normal](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/step3.sh)
 
 [Transdecoder strict](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/step3_strict.sh)
