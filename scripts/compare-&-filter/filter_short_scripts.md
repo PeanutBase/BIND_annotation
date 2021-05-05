@@ -10,7 +10,7 @@ awk -v OFS="\t" '{print $4, $5}' both.keep.list >> braker.keep.edited.list
 
 awk '{print $10}' good_genes.lst > good_genes.list
 
-sort good_genes.list | uniq | sed 's/_g";//; s/^"/gene/' > good_gene.sorted.list
+sort good_genes.list | uniq | sed 's/_g";//; s/^"/gene/' > good_genes.sorted.list
  
 grep -Fwf good_genes.sorted.list braker.keep.edited.list > braker.keep.final.list
 
