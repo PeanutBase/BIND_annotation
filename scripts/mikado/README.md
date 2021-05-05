@@ -9,83 +9,37 @@ singularity pull --name mikado.sif shub://aseetharam/mikado
 Consolidate all the transcripts, and predict potential protein coding sequence by Mikado:
 ##### Step 1: Make a configure file and prepare transcripts
 
-###### Step 1.1 Prepare a tab-delimited file called list.txt (shown below) to include gtf path (1st column), gtf abbrev (2nd column), stranded-specific or not (3rd column):
+**Step 1.1** Prepare a tab-delimited file called list.txt (shown below) to include gtf path (1st column), gtf abbrev (2nd column), stranded-specific or not (3rd column):
 ```
 /path/to/file/genome_class.gtf	araip_class	False
 /path/to/file/genome_transcripts.gtf	araip_cufflinks	False
 /path/to/file/genome_stringtie.gtf	araip_stringtie	False
 /path/to/file/genome_strawberry.gtf	araip_strawberry	False
 ```
-###### Step 1.2 Move or generate a symoblic link to the portcullis_all.junctions.bed file and the genome file 
+**Step 1.2** Move or generate a symoblic link to the portcullis_all.junctions.bed file and the genome file 
 
+**Step 1.3** Run [step1.sh](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/step1.sh) script 
 
-
-
-
-
-After completion of Mikado step 4 it is important to filter the results to remove TEs and verify abundance of transcripts. 
-
-###### Step 1: Pull the CDS from the Mikado gff3 output file
+**Step 1.4** Edit the configure.yaml file created from running Mikado_step1.sh 
+See [example_configuration.yaml](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/example_configuration.yaml)
 ```
-module load cufflinks
-gffread DI-mikado-output.gff3 -g <genome file>  -V -x <CDS output file>
-
-#Determine the number of Transcripts and genes in Mikado gff3 output file
-grep -c '^>' <CDS output file>
-grep '^>' <CDS output file> | awk '{print $2}' | sort | uniq | wc -l 
+Edit configure.yaml manually to keep all ORFs.
+Mikado nosplit mode is selected in step1 and it is best to keep all ORFs if any ORFs overlapped.
+Add these lines under 'subloci_out:' in configure.yaml
+output_format:
+report_all_orfs: true 
 ```
 
-###### Step 2: Run TEsorter and filter the results
-```
-sbatch TEsorter.sh
-```
-Filter the results
-```
-Use the file that ends with FILE.rexdb-plant.cls.tsv
-  # Get the list of TE transcripts
-awk 'NR!=1 {print $1}' FILE.rexdb-plant.cls.tsv > FILE.rexdb-plant.cls.list
+###### Step 2: Generate mikado_prepared.fasta
+Run [step2.sh](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/step2.sh); this script will generate mikado_prepared.fasta file that will be used for predicting ORFs in the next step.
 
-  # Get the list of all transcripts from mikado
-grep '^>' FILE.fna | awk '{print $1}' | sed 's/^>//' > FILE.list
+###### Step 3: Predict potential CDS from transcripts:
+There are multiple ways to conduct this step. The output needed from this step is an ORF.bed file. 
+Scripts available to use for this step: 
+[Transdecoder normal](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/step3.sh)
+[Transdecoder strict](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/step3_strict.sh)
+[ORIFPY](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/step3_orfipy.sh)
 
-  # Combine all the two list files, sort/uniq -c
-  # now if there is a 2 in front of a gene name that means it is a TE gene
-cat FILE.list | sort | uniq -c > FILE.rexdb-plant.cls.counts 
-
-  # extract the gene names that just have a 1 in front of it
-  #genes with a 1 in front of it mean that gene is NOT a TE
-awk '{if ($1 == 1) print $2}' FILE.rexdb-plant.cls.counts > FILE.TE_FILTERED.list
-
-ml seqtk
-
-seqtk subseq FILE.fna FILE.TE_FILTERED.list > FILE.TE_FILTERED.fna
-```
-
-###### Step 3: Run kallisto and filter the results
-```
-sbatch kallisto.sh
-```
-Filter the results
-```
-awk -v OFS="\t" '{if (NR!=1 && $5 > 0) print $1}' abundance.tsv > Genome.TMP0.list
-
-ml seqtk
-seqtk subseq Genome.Direct_Inference.TE_FILTERED.fna Genome.TMP0.list > arahy.Tifrunner.gnm2.DI.final.fna
-
-  # Count the number of transcripts / genes
-grep -c '^>' *.fna
-grep '^>' *.fna | awk '{print $2}' | sort | uniq | wc -l 
-```
-
-###### Step 4: Get proteins from filtered resutls for BRAKER 
-```
-grep '^>' arahy.Tifrunner.gnm2.DI.final.fna | awk -v OFS="\t" '{print $1,$2 }' | sed 's/gene=//; s/^>//' > list
-
-singularity exec --bind $PWD ../mikado.sif mikado util grep list unfiltered_files/arahy.Tifrunner.gnm2.loci.gff3 > arahy.Tifrunner.gnm2.DI.final.gff3
-
-module load cufflinks
-
-gffread arahy.Tifrunner.gnm2.DI.final.gff3 -g arahy.Tifrunner.gnm2.fna  -V -x arahy.Tifrunner.gnm2.DI.final.faa
-```
+###### Step 4:Pick best transcripts for each locus and annotate them as gene
 
 
