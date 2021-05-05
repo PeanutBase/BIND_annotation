@@ -31,7 +31,7 @@ Consolidate all the transcripts, and predict potential protein coding sequence b
        ```
         output_format:
         report_all_orfs: true 
-        ```
+       ```
 
 * **Step 2: Generate mikado_prepared.fasta**
 Run [step2.sh](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/step2.sh); this script will generate mikado_prepared.fasta file that will be used for predicting ORFs in the next step.
