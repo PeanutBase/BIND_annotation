@@ -50,7 +50,7 @@ Scripts available to use for this step:
 ```
 ./step4.sh <ORFs.bed> <prefix> 
 ```
-This script will generate a number of output files. The main output of interest will be labeled as <prefix>.loci.gff3
+This script will generate a number of output files. The main output of interest will be labeled as prefix.loci.gff3
   
-It is best to filter the mikado output (<prefix>.loci.gff3) before going to the next step. Please review [filter_output.md](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/filter_output.md)
+It is best to filter the mikado output (prefix.loci.gff3) before going to the next step. Please review [filter_output.md](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/filter_output.md)
 
