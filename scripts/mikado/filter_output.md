@@ -1,10 +1,15 @@
-* Extract CDS from the <prefix>.loci.gff3
+**Extract CDS from the <prefix>.loci.gff3**
+
+```
+ml cufflinks
+gffread <prefix>.loci.gff3 -g <genome.fasta> -x <prefix.CDS.fasta>
+```
   
-* Run TEsorter to determine which CDS are TEs
+**Run [TEsorter])https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/mikado/TEsorter.sh) to determine which CDS are TEs**
 ```
 ./TEsorter.sh <prefix.CDS.fasta>
 ```
-* Filter TEsorter results
+**Filter TEsorter results**
 
 This is mess and not the best way to handle this. 
 
@@ -25,7 +30,7 @@ seqtk subseq <prefix.CDS.fasta> <prefix>.CDS.TE_FILTERED.list > <prefix>.CDS.TE_
 
 ```
 
-* Run kallisto 
+**Run kallisto 
 
 Use <prefix>.CDS.TE_FILTERED.fasta for input for kallisto
 ```
