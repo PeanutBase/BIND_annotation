@@ -7,7 +7,7 @@ Scripts, notes and documents about the BIND annotation workflow (BIND: ab initio
 
 [Step 2: Run fastqc, trim reads and concatenate reads together](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/trim_data)
 
-Step 3: Ensure fasta header names in reference genome **do not** have the following items:
+Step 3: Ensure fasta header names in reference genome ***do not*** have the following items:
 * Training white space
 * White space between numbers or letters
 * A colon 
