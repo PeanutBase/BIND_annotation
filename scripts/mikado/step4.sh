@@ -1,13 +1,20 @@
+
+orfs=$1
+prefix=$2
+
 singularity exec --bind $PWD mikado.sif mikado serialise \
    --start-method spawn \
-   --procs 32 \
+   --procs 40 \
    --json-conf configuration.yaml \
-   --orfs DI_prepared.fasta.transdecoder.bed \
+   --orfs ${orfs} \
    -mr 1
 
 singularity exec --bind $PWD mikado.sif mikado pick \
    --start-method spawn \
-   --loci-out DI.loci.gff3 \
-   --procs 32 \
+   --loci-out ${prefix}.loci.gff3 \
+   --procs 40 \
    --json-conf configuration.yaml \
-   --subloci-out DI.subloci.gff3
+   --subloci-out ${prefix}.subloci.gff3 \
+   --pad
+   
+   
