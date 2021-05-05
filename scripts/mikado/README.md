@@ -30,7 +30,7 @@ Consolidate all the transcripts, and predict potential protein coding sequence b
        Edit configure.yaml manually to keep all ORFs. Mikado nosplit mode is selected in step1 and it is best to keep all ORFs if any ORFs overlapped. Add these lines under 'subloci_out:' in configure.yaml
        ```
         output_format:
-        report_all_orfs: true 
+          report_all_orfs: true 
        ```
 
 * **Step 2: Generate mikado_prepared.fasta**
