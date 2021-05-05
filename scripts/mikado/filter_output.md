@@ -1,4 +1,4 @@
-**Extract CDS from the <prefix>.loci.gff3**
+**Extract CDS from the prefix.loci.gff3**
 
 ```
 ml cufflinks
@@ -13,7 +13,7 @@ gffread <prefix>.loci.gff3 -g <genome.fasta> -x <prefix.CDS.fasta>
 
 This is mess and not the best way to handle this. 
 
-Use the file that ends with <prefix.CDS.fasta>.rexdb-plant.cls.tsv
+Use the file that ends with prefix.CDS.fasta.rexdb-plant.cls.tsv
 
 ```
 awk 'NR!=1 {print $1}' <prefix.CDS.fasta>.rexdb-plant.cls.tsv > <prefix.CDS.fasta>.rexdb-plant.cls.list ##get list of genes that are TEs
