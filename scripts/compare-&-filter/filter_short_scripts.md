@@ -21,3 +21,13 @@ awk -v OFS="\t" '{print $1, $2}' both.keep.list >> mikado.keep.final.list
 singularity exec --bind $PWD mikado.sif mikado util grep mikado.keep.final.list arahy.Tifrunner.gnm2.DI.Arahy02.TMP10.gff3 > mikado.keep.final.gff3
 
 ml cufflinks
+
+
+------ braker low confidence -- 
+
+cat braker.keep.edited.list braker.keep.final.list | sort | uniq -c > braker.counts
+
+awk -v OFS="\t" '{if ($1 == 1) print $2, $3}' braker.counts > braker.LowConfidence
+
+singularity exec --bind $PWD mikado.sif mikado util grep braker.LowConfidence augustus.hints-filtered.gff3 > braker.LowConfidence.gff3
+
