@@ -18,7 +18,7 @@ awk -v OFS="\t" '{print $1, $2}' mikado.keep.list > mikado.keep.final.list
 
 awk -v OFS="\t" '{print $1, $2}' both.keep.list >> mikado.keep.final.list
 
-singularity exec --bind $PWD mikado.sif mikado util grep mikado.keep.final.list arahy.Tifrunner.gnm2.DI.Arahy02.TMP10.gff3 > mikado.keep.final.gff3
+singularity exec --bind $PWD ../mikado.sif mikado util grep mikado.keep.final.list arahy.Tifrunner.gnm2.DI.Arahy02.TMP10.gff3 > mikado.keep.final.gff3
 
 ml cufflinks
 
