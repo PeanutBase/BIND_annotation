@@ -12,7 +12,7 @@ awk '{print $10}' good_genes.lst | sort | uniq | sed 's/_g";//; s/^"/gene/' > go
  
 grep -Fwf good_genes.sorted.list braker.keep.edited.list > braker.keep.final.list
 
-singularity exec --bind $PWD mikado.sif mikado util grep braker.keep.final.list augustus.hints-filtered.gff3 > braker.keep.final.gff3
+singularity exec --bind $PWD ../mikado.sif mikado util grep braker.keep.final.list augustus.hints-filtered.gff3 > braker.keep.final.gff3
 
 awk -v OFS="\t" '{print $1, $2}' mikado.keep.list > mikado.keep.final.list
 
