@@ -29,5 +29,5 @@ cat braker.keep.edited.list braker.keep.final.list | sort | uniq -c > braker.cou
 
 awk -v OFS="\t" '{if ($1 == 1) print $2, $3}' braker.counts > braker.LowConfidence
 
-singularity exec --bind $PWD mikado.sif mikado util grep braker.LowConfidence augustus.hints-filtered.gff3 > braker.LowConfidence.gff3
+singularity exec --bind $PWD ../mikado.sif mikado util grep braker.LowConfidence augustus.hints-filtered.gff3 > braker.LowConfidence.gff3
 
