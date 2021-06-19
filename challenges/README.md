@@ -1,3 +1,5 @@
+# Challenges I encounterd during this work
+
 ### Genome BAM file is too big 
 
 Split the BAM file by reference 
