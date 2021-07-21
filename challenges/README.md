@@ -25,3 +25,12 @@ Sort and tidy the gff3 file
 ml genometools
 gt gff3 -sort -tidy --retainids -o output.gff3 input.gff3
 ```
+
+### Singularity mikado compare failed
+
+Run mikado compare interactively
+```
+singularity run ../mikado.sif 
+mikado compare -r <gff3 file> -p <gff3 file>
+exit
+```
