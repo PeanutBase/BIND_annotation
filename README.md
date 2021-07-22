@@ -38,8 +38,7 @@ Step 3: Ensure fasta header names in reference genome ***do not*** have the foll
 [Step 7: Mikado pipeline & Quality control of Mikado pipeline output](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/mikado)
 
 [Step 8: BRAKER & Filter TE sequences](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/braker)
-* NOTE: There are multiple ways to run BRAKER. I recommend reviewing documentation for [BRAKER2](https://github.com/Gaius-Augustus/BRAKER#keys-to-successful-gene-prediction) and review [BRAKER2 tutorial](https://bioinformaticsworkbook.org/dataAnalysis/GenomeAnnotation/Intro_to_Braker2.html#gsc.tab=0)
-* Listed in this repo is two different ways to run the BRAKER pipeline modes
+* **NOTE:** There are multiple ways to run BRAKER. I recommend reviewing documentation for [BRAKER2](https://github.com/Gaius-Augustus/BRAKER#keys-to-successful-gene-prediction) and review [BRAKER2 tutorial](https://bioinformaticsworkbook.org/dataAnalysis/GenomeAnnotation/Intro_to_Braker2.html#gsc.tab=0)
   * [Manual](https://github.com/Gaius-Augustus/BRAKER#braker-with-rna-seq-data) about BRAKER with RNA-Seq data
     * [Scripts and notes in this repo](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/braker/README.md) about running BRAKER with RNA-Seq data only
   * [Manual](https://github.com/Gaius-Augustus/BRAKER#braker-with-rna-seq-and-protein-data) about BRAKER with RNA-Seq and Protein data
