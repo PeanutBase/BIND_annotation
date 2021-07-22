@@ -27,7 +27,9 @@ bedtools maskfasta -fi genome.fasta -bed repeat-masker.out.gff -fo genome.hardma
 
 ### 2. Run BRAKER
 
+**If you have difficulty to install BRAKER, we suggest you to download the singularity container for this step at [here](https://github.com/aseetharam/braker).**
 
+Required input to use the `runBRAKER_singularity.sh` script: **(1)** path to Braker Singularity Image, **(2)** path to RNA-Seq BAM file and **(3)** path to hard masked genome. 
 The output files that are important are within the `barker` folder. Following files are important:
 
   - `augustus.hints.gtf` : final preidctions
