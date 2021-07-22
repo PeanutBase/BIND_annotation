@@ -20,9 +20,10 @@ awk '{if ($1 == 1) print $2}' counts > augustus.hints.codingseq.TE_FILTERED.list
 ml seqtk
 
 seqtk subseq augustus.hints.codingseq augustus.hints.codingseq.TE_FILTERED.list > augustus.hints.codingseq.TE_FILTERED.fasta
-
+```
 **Create a new filter gff3 file**
 ```
 grep '^>' augustus.hints.codingseq.TE_FILTERED.fasta | awk -v OFS="\t" '{print $1,$2 }' | sed 's/gene=//; s/^>//' > list
 singularity exec --bind $PWD mikado.sif mikado util grep list augustus.hints-clean.gff3 > augustus.hints.clean.TE_FILTERED.gff3
     ### important the mikado.sif signiularity images needs to in the same location you are working in.
+```
