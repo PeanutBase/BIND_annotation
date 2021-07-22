@@ -52,4 +52,4 @@ Using `augustus.hints.codingseq` as input file, TE-sorter was run as follows:
 TEsorter.py -p 36 -db rexdb-plant augustus.hints.codingseq
 ```
 
-The result file `augustus.hints.codingseq.rexdb-plant.cls.tsv` provides the list of transcript ids that has potential TE elements in it. Review the script 
+The result file `augustus.hints.codingseq.rexdb-plant.cls.tsv` provides the list of transcript ids that has potential TE elements in it. Review the script `filter_TE.md` to see how I filtered the TE sequences and generated a TE_Filtered GFF3 for the final [compare & filter step](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/compare-%26-filter) 
