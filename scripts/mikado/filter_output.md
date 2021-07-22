@@ -57,14 +57,14 @@ singularity exec --bind $PWD mikado.sif mikado util grep list <prefix>.loci.gff3
     ### important the mikado.sif signiularity images needs to in the same location you are working in.
 ```
 
-**Extract CDS from the prefix.filtered.gff3**
+**Extract CDS from the prefix.TMP0.Final.gff3**
 
 ```
 ml cufflinks
 gffread <prefix>.TMP0.Final.gff3 -g <genome.fasta> -x <prefix.TMP0.Final.CDS.fasta>
 ```
 
-**Extract PEP from the prefix.filtered.gff3**
+**Extract PEP from the prefix.TMP0.Final.gff3**
 
 ```
 ml cufflinks
