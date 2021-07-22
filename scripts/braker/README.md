@@ -38,6 +38,11 @@ The output files that are important are within the `barker` folder. Following fi
 
 ### 3. Tidy the `augustus.hints.gtf` file using genometools 
 
+Using the program `genometools` with the `gtf_to_gff3` option to generate a clean version of a gff3 file for further filtering. 
+```
+module load genometools
+gt gtf_to_gff3 -tidy -o augustus.hints-clean.gff3 augustus.hints.gtf
+```
 
 ### 4. Run TE-sorter
 
