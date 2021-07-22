@@ -55,5 +55,18 @@ seqtk subseq <prefix>.CDS.TE_FILTERED.fasta <prefix>.TMP0.list  > <prefix>.TMP0.
 grep '^>' <prefix>.TMP0.Final.fasta | awk -v OFS="\t" '{print $1,$2 }' | sed 's/gene=//; s/^>//' > list
 singularity exec --bind $PWD mikado.sif mikado util grep list <prefix>.loci.gff3 > <prefix>.TMP0.Final.gff3
     ### important the mikado.sif signiularity images needs to in the same location you are working in.
+```
 
+**Extract CDS from the prefix.filtered.gff3**
+
+```
+ml cufflinks
+gffread <prefix>.TMP0.Final.gff3 -g <genome.fasta> -x <prefix.TMP0.Final.CDS.fasta>
+```
+
+**Extract PEP from the prefix.filtered.gff3**
+
+```
+ml cufflinks
+gffread <prefix>.TMP0.Final.gff3 -g <genome.fasta> -y <prefix.TMP0.Final.PEP.fasta>
 ```
