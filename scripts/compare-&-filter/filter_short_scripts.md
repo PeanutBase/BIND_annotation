@@ -1,8 +1,5 @@
------ Compare good_genes with braker.keep -----
 
-awk '{if ($3 == "=") print $0}' mikado_compare.tmap | wc -l
 
-awk '{if ($3 == "=") print $0}' mikado_compare.tmap >>
  
 awk -v OFS="\t" '{print $4, $5}' braker.keep.list  > braker.keep.edited.list
 
