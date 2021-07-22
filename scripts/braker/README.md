@@ -1,4 +1,4 @@
-# BRAKER predictions
+# BRAKER predictions using RNA-Seq data only
 For generating _ab initio_ predictions, for each spp. following files were gathered.
 If you have difficulty to install BRAKER, we suggest you to download the singularity container for this step at [here](https://github.com/aseetharam/braker).
 
@@ -9,7 +9,7 @@ If you have difficulty to install BRAKER, we suggest you to download the singula
 ### Steps overview:
 
 1. Repeat mask genomes using `Repeatmasker`
-2. Use the hard-masked genomes for BRAKER predictions, using RNA-Seq and proteins as evidence.
+2. Use the hard-masked genomes for BRAKER predictions, using RNA-Seq as evidence.
 3. Tidy the `augustus.hints.gtf` file using genometools 
 4. Run `TE-sorter` to find BRAKER predictions (genes/transcripts), that contain TE.
 
