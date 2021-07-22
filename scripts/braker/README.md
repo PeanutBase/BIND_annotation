@@ -34,8 +34,10 @@ The output files that are important are within the `barker` folder. Following fi
   - `augustus.hints.codingseq` : transcripts
   - `augustus.hints.aa` : proteins
 
+### 3. Tidy the `augustus.hints.gtf` file using genometools 
 
-### 3. Run TE-sorter
+
+### 4. Run TE-sorter
 
 Using `augustus.hints.codingseq` as input file, TE-sorter was run as follows:
 
