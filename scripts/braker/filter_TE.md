@@ -9,7 +9,7 @@ awk 'NR!=1 {print $1}' augustus.hints.codingseq.rexdb-plant.cls.tsv > augustus.h
     ##get list of genes that are TEs
 
 grep '^>' augustus.hints.codingseq | awk '{print $1}' | sed 's/^>//' > augustus.hints.codingseq.list  
-    ##get complete list of genes from mikado
+    ##get complete list of genes from BRAKER
 
 cat *.list | sort | uniq -c > counts  
     ##combine the two list - now if there is a 2 in front of a gene name that means it is a TE gene
