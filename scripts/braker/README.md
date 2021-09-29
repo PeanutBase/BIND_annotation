@@ -38,18 +38,23 @@ The output files that are important are within the `barker` folder. Following fi
 
 ### 3. Tidy the gtf file using genometools 
 
-Using the program `genometools` with the `gtf_to_gff3` option to generate a clean version of a gff3 file for further filtering. 
-```
+Using the program `genometools` with the `gtf_to_gff3` option to generate a clean version of a gff3 file for further filtering. **Note: In my experience - somethings `genometools` did not work. Review the Challenges ReadMe file.**
+```bash
 module load genometools
 gt gtf_to_gff3 -tidy -o augustus.hints-clean.gff3 augustus.hints.gtf
 ```
 
 ### 4. Run TE-sorter
 
-Using `augustus.hints.codingseq` as input file, TE-sorter was run as follows:
+Create an CDS file using Cufflinks gffread from the `augustus.hints.gtf` file. 
+```bash
+module load cuffload
+gffread augustus.hints.gtf -g /path/to/the/genome_main.fasta -x augustus.hints.CDS.fasta
+```
+Use `augustus.hints.CDS.fasta` for TE-sorter run as follows:
 
 ```bash
-TEsorter.py -p 36 -db rexdb-plant augustus.hints.codingseq
+TEsorter.py -p 20 -db rexdb-plant augustus.hints.CDS.fasta
 ```
 
-The result file `augustus.hints.codingseq.rexdb-plant.cls.tsv` provides the list of transcript ids that has potential TE elements in it. Review the script [filter_TE.md](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/braker/filter_TE.md) to see how I filtered the TE sequences and generated a TE_Filtered GFF3 for the final [compare & filter step](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/compare-%26-filter) 
+The result file `augustus.hints.CDS.fasta.rexdb-plant.cls.tsv` provides the list of transcript ids that has potential TE elements in it. Review the script [filter_TE.md](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/braker/filter_TE.md) to see how I filtered the TE sequences and generated a TE_Filtered GFF3 for the final [compare & filter step](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/compare-%26-filter) 
