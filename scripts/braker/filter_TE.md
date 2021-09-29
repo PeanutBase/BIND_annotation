@@ -5,21 +5,21 @@ This is mess and not the best way to handle this.
 Use the file that ends with augustus.hints.codingseq.rexdb-plant.cls.tsv
 
 ```
-awk 'NR!=1 {print $1}' augustus.hints.codingseq.rexdb-plant.cls.tsv > augustus.hints.codingseq.rexdb-plant.cls.list 
+awk 'NR!=1 {print $1}' augustus.hints.CDS.fasta.rexdb-plant.cls.tsv > augustus.hints.CDS.fasta.rexdb-plant.cls.list 
     ##get list of genes that are TEs
 
-grep '^>' augustus.hints.codingseq | sed 's/^>//' > augustus.hints.codingseq.list  
+grep '^>' augustus.hints.CDS.fasta | sed 's/^>//' > augustus.hints.CDS.list  
     ##get complete list of genes from BRAKER
 
 cat *.list | sort | uniq -c > counts  
     ##combine the two list - now if there is a 2 in front of a gene name that means it is a TE gene
 
-awk '{if ($1 == 1) print $2}' counts > augustus.hints.codingseq.TE_FILTERED.list  
+awk '{if ($1 == 1) print $2}' counts > augustus.hints.CDS.TE_FILTERED.list  
     ##extract the gene names that just have a 1 in front of it
     
 ml seqtk
 
-seqtk subseq augustus.hints.codingseq augustus.hints.codingseq.TE_FILTERED.list > augustus.hints.codingseq.TE_FILTERED.fasta
+seqtk subseq augustus.hints.CDS.fasta augustus.hints.CDS.TE_FILTERED.list > augustus.hints.CDS.TE_FILTERED.fasta
 ```
 **Create a new filter gff3 file**
 ```
