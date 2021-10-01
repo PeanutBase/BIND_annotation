@@ -8,7 +8,7 @@ Use the file that ends with augustus.hints.codingseq.rexdb-plant.cls.tsv
 awk 'NR!=1 {print $1}' augustus.hints.CDS.fasta.rexdb-plant.cls.tsv > augustus.hints.CDS.fasta.rexdb-plant.cls.list 
     ##get list of genes that are TEs
 
-grep '^>' augustus.hints.CDS.fasta | sed 's/^>//' > augustus.hints.CDS.list  
+grep '^>' augustus.hints.CDS.fasta | awk '{print $1}' | sed 's/^>//' > augustus.hints.CDS.list  
     ##get complete list of genes from BRAKER
 
 cat *.list | sort | uniq -c > counts  
