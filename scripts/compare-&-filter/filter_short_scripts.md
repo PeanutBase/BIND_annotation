@@ -1,5 +1,5 @@
 
-### Mikado.Keep == Mikado.HighConfidence
+# Mikado.Keep == Mikado.HighConfidence
  
 awk -v OFS="\t" '{print $1, $2}' mikado.keep.list > mikado.HC.list
 
@@ -11,7 +11,7 @@ ml cufflinks
 
 gffread mikado.HighConfidence.gff3 -g <genome> -x mikado.HighConfidence.CDS.fna
 
-### Braker.Keep == Braker.HighConfidence ---
+# Braker.Keep == Braker.HighConfidence
 
 awk -v OFS="\t" '{print $4, $5}' braker.keep.list  > braker.HC.list
 
@@ -23,7 +23,7 @@ ml cufflinks
 
 gffread braker.HighConfidence.gff3 -g <genome> -x braker.HighConfidence.CDS.fna
 
-### Braker.Need2Filter.list == Braker.LowConfidence ----
+# Braker.Need2Filter.list == Braker.LowConfidence
  
 awk -v OFS="\t" '{print $4, $5}' braker.Need2Filter.list >> braker.LC.list
 
