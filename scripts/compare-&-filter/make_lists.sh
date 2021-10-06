@@ -41,7 +41,7 @@ awk '{if ($3 == "P") print $0}' mikado_compare.tmap >> both.keep.list
 awk '{if ($3 == "ri") print $0}' mikado_compare.tmap >> mikado.keep.list
 awk '{if ($3 == "rI") print $0}' mikado_compare.tmap >> mikado.keep.list
 ###
-awk '{if ($3 == "u") print $0}' mikado_compare.tmap >> braker.keep.list
+awk '{if ($3 == "u") print $0}' mikado_compare.tmap >> braker.Need2Filter.list
 ###
 awk '{if ($3 == "x") print $0}' mikado_compare.tmap >> mikado.keep.list
 awk '{if ($3 == "X") print $0}' mikado_compare.tmap >> mikado.keep.list
