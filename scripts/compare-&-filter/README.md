@@ -10,5 +10,5 @@ For comparing and filtering the two annotation methods the following files need 
 
 ``` cut -f3 mikado_compare.tmap | sort | uniq -c ```
 
-3. Generate mikado.keep.list, braker.keep.list, both.keep.list, braker.Need2Filter.list from Mikado Compare output [make_lists.sh](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/compare-%26-filter/make_lists.sh)
+3. Generate mikado.keep.list, braker.keep.list, both.keep.list, braker.Need2Filter.list from Mikado Compare output (Example: [make_lists.sh](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/compare-%26-filter/make_lists.sh))
  
