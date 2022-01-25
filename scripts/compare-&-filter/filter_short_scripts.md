@@ -3,7 +3,7 @@
  
 ```
 awk -v OFS="\t" '{print $1, $2}' mikado.keep.list > mikado.HC.list
-awk -v OFS="\t" '{print $1, $2}' both.keep.list >> mikado.keep.HC.list
+awk -v OFS="\t" '{print $1, $2}' both.keep.list >> mikado.HC.list
 singularity exec --bind $PWD mikado.sif mikado util grep mikado.HC.list arahy.Tifrunner.gnm2.J5K5.TMP_0.5.gff3 > arahy.Tifrunner.gnm2.J5K5.DI.HighConfidence.gff3
 ```
 
