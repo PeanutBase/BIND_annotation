@@ -48,7 +48,7 @@ gt gtf_to_gff3 -tidy -o augustus.hints-clean.gff3 augustus.hints.gtf
 
 Create an CDS file using Cufflinks gffread from the `augustus.hints.gtf` file. 
 ```bash
-module load cuffload
+module load cufflinks
 gffread augustus.hints.gtf -g /path/to/the/genome_main.fasta -x augustus.hints.CDS.fasta
 ```
 Use `augustus.hints.CDS.fasta` for TE-sorter run as follows:
