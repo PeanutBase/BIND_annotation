@@ -22,6 +22,8 @@ gffread arahy.Tifrunner.gnm2.J5K5.DI.HighConfidence.gff3 -g arahy.Tifrunner.gnm2
 ```
 awk -v OFS="\t" '{print $4, $5}' braker.keep.list  > braker.HC.list
 awk -v OFS="\t" '{print $4, $5}' both.keep.list >> braker.HC.list
+sort braker.HC.list | uniq > braker.HC.list.uniq (*See Special Note above*)
+
 singularity exec --bind $PWD mikado.sif mikado util grep braker.HC.list Arahy.genome.augustus.hints.CDS.TE_FILTERED_CLEAN.gff3 > arahy.Tifrunner.gnm2.J5K5.BRAKER.HighConfidence.gff3
 ```
 
