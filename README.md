@@ -5,6 +5,7 @@
 [Published December 20, 2021](https://doi.org/10.1093/nar/gkab1238) [GitHub Repo](https://github.com/eswlab/orphan-prediction)
 
 ## Overview of Steps
+
 Step 1: Download data from SRA
 Step 2: SRA data quality control
 Step 3: Whole genome quality control
