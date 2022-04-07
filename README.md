@@ -46,3 +46,10 @@ Step 3: Ensure fasta header names in reference genome ***do not*** have the foll
 
 [Step 9: Merge & Filter -- Mikado output & BRAKER output]
 
+
+| Tool  | Purpose |
+| ------------- | ------------- |
+| [Strawberry](https://github.com/ruolin/strawberry) (v1.1) | Transcript Assembly  |
+| Content Cell  | Content Cell  |
+
+
