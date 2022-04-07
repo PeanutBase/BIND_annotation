@@ -4,6 +4,14 @@
 ## Scripts, notes and documents about the BIND annotation workflow (BIND: ab initio gene predictions by BRAKER combined with gene predictions INferred Directly from alignment of RNA-Seq evidence to the genome.) 
 [Published December 20, 2021](https://doi.org/10.1093/nar/gkab1238) [GitHub Repo](https://github.com/eswlab/orphan-prediction)
 
+## Overview of Steps
+Step 1: Download data from SRA
+Step 2: SRA data quality control
+Step 3: Whole genome quality control
+Step 4: Align reads to a reference genome
+Step 5: Genome guided transcriptome assemblies
+Step 6: 
+
 #### Note: I recommend that you review the [challenges document/scripts](https://github.com/PeanutBase/BIND_annotation/tree/main/challenges#readme).
 
 [Step 1: Download data from SRA](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/download_data)
@@ -33,7 +41,7 @@ Step 3: Ensure fasta header names in reference genome ***do not*** have the foll
   * StringTie
   * Note: Not recommonded to use Trinity because it generartes too many small incomplete transcripts 
 
-[Step 6: Run Portculli for splice junctions analysis](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/portcullis.sh)
+[Step 6: Run Portcullis for splice junctions analysis](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/portcullis.sh)
 
 [Step 7: Mikado pipeline & Quality control of Mikado pipeline output](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/mikado)
 
@@ -63,8 +71,12 @@ Step 3: Ensure fasta header names in reference genome ***do not*** have the foll
 | [Portcullis](https://github.com/EI-CoreBioinformatics/portcullis) (v ) | Splice junctions |
 | [Mikado](https://github.com/EI-CoreBioinformatics/mikado) (v ) | Direct Inference prediction |
 | [Transdecoder](https://github.com/TransDecoder/TransDecoder) (v ) | CDS prediction |
+| [TeSorter](https://github.com/zhangrengang/TEsorter) (v ) | identify retrotransposons |
+| [Kallisto](https://pachterlab.github.io/kallisto/) (v ) | Quality Control |
+| [Braker](https://github.com/Gaius-Augustus/BRAKER) (v ) | *Ab initio* prediction |
+| [GeneMark](http://exon.gatech.edu/GeneMark/) (v ) | *Ab initio* prediction |
 
-
+## Flow Chart
 
 
 
