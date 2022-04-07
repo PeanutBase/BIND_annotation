@@ -1,7 +1,8 @@
 # BIND annotation
 ##### BIND = Braker combined with gene predictions INferred Directly
 ## Still under development
-## Scripts, notes and documents about the BIND annotation workflow (BIND: ab initio gene predictions by BRAKER combined with gene predictions INferred Directly from alignment of RNA-Seq evidence to the genome.) [Published December 20, 2021](https://doi.org/10.1093/nar/gkab1238)
+## Scripts, notes and documents about the BIND annotation workflow (BIND: ab initio gene predictions by BRAKER combined with gene predictions INferred Directly from alignment of RNA-Seq evidence to the genome.) 
+[Published December 20, 2021](https://doi.org/10.1093/nar/gkab1238) [GitHub Repo](https://github.com/eswlab/orphan-prediction)
 
 #### Note: I recommend that you review the [challenges document/scripts](https://github.com/PeanutBase/BIND_annotation/tree/main/challenges#readme).
 
@@ -50,7 +51,20 @@ Step 3: Ensure fasta header names in reference genome ***do not*** have the foll
 
 | Tool  | Purpose |
 | ------------- | ------------- |
+| [SRA Toolkit](https://github.com/ncbi/sra-tools)(v )| SRA access |
+| [FASTQC](https://github.com/s-andrews/FastQC) (v ) | Quality Control |
+| [Trimmomatic](https://github.com/timflutre/trimmomatic) (v ) | Quality Control |
+| [STAR](https://github.com/alexdobin/STAR) (v ) | Alignment |
+| [SamTools](https://github.com/samtools/samtools) (v ) | Tool |
 | [Strawberry](https://github.com/ruolin/strawberry) (v1.1.1) | Transcript Assembly  |
-| Content Cell  | Content Cell  |
+| [CLASS2](http://ccb.jhu.edu/people/florea/research/CLASS2/) (v ) | Transcript Assembly  |
+| [StringTie](https://github.com/gpertea/stringtie) (v ) | Transcript Assembly  |
+| [Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/) (v ) | Transcript Assembly  |
+| [Portcullis](https://github.com/EI-CoreBioinformatics/portcullis) (v ) | Splice junctions |
+| [Mikado](https://github.com/EI-CoreBioinformatics/mikado) (v ) | Direct Inference prediction |
+| [Transdecoder](https://github.com/TransDecoder/TransDecoder) (v ) | CDS prediction |
+
+
+
 
 
