@@ -1,7 +1,7 @@
 # BIND_annotation
-**Still under development: adding scripts**
+**Still under development**
 
-Scripts, notes and documents about the BIND annotation workflow (BIND: ab initio gene predictions by BRAKER combined with gene predictions INferred Directly from alignment of RNA-Seq evidence to the genome.)
+Scripts, notes and documents about the BIND annotation workflow (BIND: ab initio gene predictions by BRAKER combined with gene predictions INferred Directly from alignment of RNA-Seq evidence to the genome.) 
 
 **Note:** I recommend that you review the [challenges document/scripts](https://github.com/PeanutBase/BIND_annotation/tree/main/challenges#readme).
 
@@ -23,7 +23,7 @@ Step 3: Ensure fasta header names in reference genome ***do not*** have the foll
   * TopHat2
 * If using both Paired-end and Single end reads: merge PE and SE BAM files and sort combined BAM files
 * If combined BAM file is larger than 100 GB it is recommened to split the BAM file by chromsome 
-  * A large BAM file could take weeks to finish 
+  * A large BAM file could take weeks to finish. See [challenges](https://github.com/PeanutBase/BIND_annotation/tree/main/challenges#readme).
 
 [Step 5: Use BAM file for input for multiple genome guided transcriptome assembliers, get GFF3/GTF files as output](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/generate_GFF)
 * Examples of genome guided transcriptome assembly programs
@@ -47,9 +47,11 @@ Step 3: Ensure fasta header names in reference genome ***do not*** have the foll
 [Step 9: Merge & Filter -- Mikado output & BRAKER output]
 
 
+## Tools needed: 
+
 | Tool  | Purpose |
 | ------------- | ------------- |
-| [Strawberry](https://github.com/ruolin/strawberry) (v1.1) | Transcript Assembly  |
+| [Strawberry](https://github.com/ruolin/strawberry) (v1.1.1) | Transcript Assembly  |
 | Content Cell  | Content Cell  |
 
 
