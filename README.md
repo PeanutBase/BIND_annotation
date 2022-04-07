@@ -1,11 +1,10 @@
 # BIND annotation
-### BIND: ab initio gene predictions by BRAKER combined with gene predictions INferred Directly
-### **Still under development**
+### BIND = Braker combined with gene predictions INferred Directly
+## Still under development
 
-Scripts, notes and documents about the BIND annotation workflow (BIND: ab initio gene predictions by BRAKER combined with gene predictions INferred Directly from alignment of RNA-Seq evidence to the genome.) 
+#### Note: I recommend that you review the [challenges document/scripts](https://github.com/PeanutBase/BIND_annotation/tree/main/challenges#readme).
 
-**Note:** I recommend that you review the [challenges document/scripts](https://github.com/PeanutBase/BIND_annotation/tree/main/challenges#readme).
-
+Scripts, notes and documents about the BIND annotation workflow (BIND: ab initio gene predictions by BRAKER combined with gene predictions INferred Directly from alignment of RNA-Seq evidence to the genome.) [Published December 20, 2021](https://doi.org/10.1093/nar/gkab1238)
 
 [Step 1: Download data from SRA](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/download_data)
 
@@ -32,7 +31,7 @@ Step 3: Ensure fasta header names in reference genome ***do not*** have the foll
   * Class2
   * Strawberry
   * StringTie
-  * Note: Not recommonded to use Trinity because it generartes to many small incomplete transcripts 
+  * Note: Not recommonded to use Trinity because it generartes too many small incomplete transcripts 
 
 [Step 6: Run Portculli for splice junctions analysis](https://github.com/PeanutBase/BIND_annotation/blob/main/scripts/portcullis.sh)
 
