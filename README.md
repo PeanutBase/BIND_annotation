@@ -5,15 +5,7 @@
 [Published December 20, 2021](https://doi.org/10.1093/nar/gkab1238) [GitHub Repo](https://github.com/eswlab/orphan-prediction)
 
 ## Overview of Steps
-
-Step 1: Download data from SRA
-Step 2: SRA data quality control
-Step 3: Whole genome quality control
-Step 4: Align reads to a reference genome
-Step 5: Genome guided transcriptome assemblies
-Step 6: 
-
-#### Note: I recommend that you review the [challenges document/scripts](https://github.com/PeanutBase/BIND_annotation/tree/main/challenges#readme).
+Note: I recommend that you review the [challenges document/scripts](https://github.com/PeanutBase/BIND_annotation/tree/main/challenges#readme).
 
 [Step 1: Download data from SRA](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/download_data)
 
