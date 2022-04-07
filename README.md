@@ -67,6 +67,7 @@ Step 3: Ensure fasta header names in reference genome ***do not*** have the foll
 | [Transdecoder](https://github.com/TransDecoder/TransDecoder) (v ) | CDS prediction |
 | [TeSorter](https://github.com/zhangrengang/TEsorter) (v ) | identify retrotransposons |
 | [Kallisto](https://pachterlab.github.io/kallisto/) (v ) | Quality Control |
+| [RepeatMasker](https://www.repeatmasker.org) (v) | Hardmask genome |
 | [Braker](https://github.com/Gaius-Augustus/BRAKER) (v ) | *Ab initio* prediction |
 | [GeneMark](http://exon.gatech.edu/GeneMark/) (v ) | *Ab initio* prediction |
 
