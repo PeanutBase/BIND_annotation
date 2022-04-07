@@ -1,8 +1,8 @@
 # BIND annotation
 ##### BIND = Braker combined with gene predictions INferred Directly
-## Still under development
 ## Scripts, notes and documents about the BIND annotation workflow (BIND: ab initio gene predictions by BRAKER combined with gene predictions INferred Directly from alignment of RNA-Seq evidence to the genome.) 
-[Published December 20, 2021](https://doi.org/10.1093/nar/gkab1238) [GitHub Repo](https://github.com/eswlab/orphan-prediction)
+[Published December 20, 2021](https://doi.org/10.1093/nar/gkab1238) 
+[GitHub Repo](https://github.com/eswlab/orphan-prediction)
 
 ## Overview of Steps
 Note: I recommend that you review the [challenges document/scripts](https://github.com/PeanutBase/BIND_annotation/tree/main/challenges#readme).
