@@ -31,7 +31,7 @@ Step 3: Ensure fasta header names in reference genome ***do not*** have the foll
 [Step 5: Use BAM file for input for multiple genome guided transcriptome assembliers, get GFF3/GTF files as output](https://github.com/PeanutBase/BIND_annotation/tree/main/scripts/generate_GFF)
 * Examples of genome guided transcriptome assembly programs
   * Cufflinks
-  * Class2
+  * Class2 or PsiCLASS
   * Strawberry
   * StringTie
   * Note: Not recommonded to use Trinity because it generartes too many small incomplete transcripts 
@@ -61,6 +61,7 @@ Step 3: Ensure fasta header names in reference genome ***do not*** have the foll
 | [SamTools](https://github.com/samtools/samtools) (v ) | Tool |
 | [Strawberry](https://github.com/ruolin/strawberry) (v1.1.1) | Transcript Assembly  |
 | [CLASS2](http://ccb.jhu.edu/people/florea/research/CLASS2/) (v ) | Transcript Assembly  |
+| [PsiCLASS](https://github.com/splicebox/PsiCLASS) (v ) | Transcript Assembly  |
 | [StringTie](https://github.com/gpertea/stringtie) (v ) | Transcript Assembly  |
 | [Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/) (v ) | Transcript Assembly  |
 | [Portcullis](https://github.com/EI-CoreBioinformatics/portcullis) (v ) | Splice junctions |
