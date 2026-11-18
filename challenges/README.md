@@ -1,5 +1,15 @@
 # Challenges I encounterd during this work
 
+### CLASS2 FAILS or 'stalls'
+
+There is a bottleneck in CLASS2 with causes the program to fail or stall. The creator of CLASS2 knows of this bottle neck and recommends a fews options.
+
+- Option 1: Use fewer processors/threads, double the memory and triple the wall time. 
+- Option 2: Split the BAM file by chromosome and run each chromosome BAM file individually.
+- Option 3: The creater of CLASS2 wrote [PsiCLASS](https://github.com/splicebox/PsiCLASS) which fixes the bottleneck. However, PsiCLASS does require a significant amount of memory. I used 200 GB per processor.
+
+
+
 ### Genome BAM file is too big 
 
 Split the BAM file by reference 
